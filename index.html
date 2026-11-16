@@ -612,8 +612,8 @@ const SET_SIZE = 2;
 const KINDS = ['photo','pic'];
 const PC = ['#ff6b9a','#3d8bff','#e6a42c'];
 const playerCount = mode => mode==='trio'?3:mode==='pair'?2:1;
-const CFG = {mode:'solo', time:180};
-try{ Object.assign(CFG, JSON.parse(localStorage.getItem('transport-photo-art-cfg')||'{}')); }catch(e){}
+const CFG = {mode:'pair', time:180};
+try{ Object.assign(CFG, JSON.parse(localStorage.getItem('transport-photo-art-cfg')||'{}'), {mode:'pair'}); }catch(e){}
 
 /* ================= 그림 ================= */
 const svg = id => `<svg class="ill textbook" viewBox="0 0 100 100" aria-hidden="true"><use href="#transport-art-${id}"/></svg>`;
